@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+}
+
+#questionTextDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 45%;
+}
+
+label{
+    margin-left: 20px;
+}
+
+#answers li{
+    margin-top: 20px;
+}
+#answers ul{
+    list-style-type: none;
+}
+
+#answers{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    height: 45%;
+    width: 100%;
+}
+
+
+#cardQuestion{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    width: 50%;
+    height: 60vh;
+    background-color: white;
+
+}

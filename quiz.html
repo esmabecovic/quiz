@@ -4,10 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="questions (2).js" defer></script>
+    <script src="quiz.js" defer></script>
     <title>Document</title>
   </head>
   <body>
-    <script src="questions (2).js"></script>
-    <script src="quiz.js"></script>
+    <div id="main">
+      <div id="cardQuestion">
+        <div id="questionTextDiv">
+          <h1 id="questionTextP"></h1>
+        </div>
+        <form id="answers" (onchange) = 'buttonClick()'>
+          <ul>
+            <li><input type="radio" class="ans" name="answer1" id="answer1" /><label for="answer1" id="answer1Label"></label></li>
+            <li><input type="radio" class="ans" name="answer1" id="answer2" /><label for="answer2" id="answer2Label"></label></li>
+            <li><input type="radio" class="ans" name="answer1" id="answer3" /><label for="answer3" id="answer3Label"></label></li>
+            <li><input type="radio" class="ans" name="answer1" id="answer4" /><label for="answer4" id="answer4Label"></label></li>
+            
+            
+            
+            
+          </ul>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
