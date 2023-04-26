@@ -16,8 +16,7 @@ function buttonClick() {
     allAnswers.forEach(el => {
       el.checked = false
     el.onclick = () => {
-        brojac++
-        console.log(brojac);  
+        brojac++ 
     }
     });
 
