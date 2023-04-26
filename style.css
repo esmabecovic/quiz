@@ -65,7 +65,7 @@ label{
     align-items: center;
     width: 80px;
     height: 4vh;
-
+    border-radius: 10px;
 }
 .myModal{
     display: none;
