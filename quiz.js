@@ -1,4 +1,5 @@
 let questionText = document.querySelector("#questionTextP")
+let body = document.querySelector('body')
 let questionTextDiv = document.querySelector("#questionTextDiv")
 
 let main = document.querySelector("#main")
@@ -9,20 +10,64 @@ let answer1Label = document.querySelector("#answer1Label")
 let answer2Label = document.querySelector("#answer2Label")
 let answer3Label = document.querySelector("#answer3Label")
 let answer4Label = document.querySelector("#answer4Label")
+let btn = document.querySelector('.btn')
+let modal = document.querySelector('.myModal')
+let yesBtn = document.querySelector('#yes')
+let noBtn = document.querySelector('#no')
 
 brojac = 0
-
+modalBtn()
 function buttonClick() {
-    allAnswers.forEach(el => {
-      el.checked = false
-    el.onclick = () => {
-        brojac++
-        console.log(brojac);  
+    // allAnswers.forEach(el => {
+    //   el.checked = false
+    // el.onclick = () => {
+    //     // brojac++
+    //     console.log(brojac);  
+    // }
+    // });
+    btn.onclick = () =>{
+        modal.style.display = 'block'
+        // main.style.backgroundColor = 'lightgray'
+        // cardQuestion.style.backgroundColor = 'lightgray'
     }
-    });
-
     }
+    function modalBtn(){
+        // i = 0
+        noBtn.onclick = () =>{
+        modal.style.display = 'none'
+    }
+    yesBtn.onclick = () =>{
+        allAnswers.forEach(el =>{
+            // console.log(+el.id);
+            if(el.checked){
+                if(+el.id === questions[brojac].correct_answer){
+                    console.log("tacno")
+                    brojac++
+                    ui()
+                    modal.style.display = 'none'
+                    // console.log(el.id);
+                    // console.log(questions[i].correct_answer);
+                    allAnswers.forEach((el)=>{
+                        el.checked = false;
+                    })
+                }
+                else{
+                    console.log("netacno")
+                    modal.style.display = 'none'
+                    // alert('Pokusajte ponovo!')
+                    brojac++
+                    ui()
+                    allAnswers.forEach((el)=>{
+                        el.checked = false;
+                    })
+                    // return false
+                }
+            }
+        })
+    }
+}    
     
+
 
 
 function ui() {
