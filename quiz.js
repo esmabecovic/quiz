@@ -12,7 +12,7 @@ let answer4Label = document.querySelector("#answer4Label")
 
 brojac = 0
 
-function buttonClick(brojac) {
+function buttonClick() {
     allAnswers.forEach(el => {
       el.checked = false
     el.onclick = () => {
@@ -39,5 +39,5 @@ const shuffledQuestions = questions.sort((a, b) => 0.5 - Math.random());
 
 console.log(questions)
 console.log(shuffledQuestions);
-buttonClick(brojac)
+buttonClick()
 ui()
