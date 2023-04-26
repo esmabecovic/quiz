@@ -41,8 +41,6 @@ label{
     height: 45%;
     width: 100%;
 }
-
-
 #cardQuestion{
     padding: 20px;
     display: flex;
@@ -51,4 +49,60 @@ label{
     width: 50%;
     height: 60vh;
     background-color: white;
+    border-radius: 20px;
 }
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30vh;
+    margin-top: 50px;
+}
+#submitBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 4vh;
+
+}
+.myModal{
+    display: none;
+    width: 30%;
+    height: 20vh;
+    background-color: lightcoral;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    border-radius: 20px;
+}
+.modal-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.yes-no{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    height: 4vh;
+}
+.yes-no #yes{
+    margin: 15px;
+    margin-top: 40px;
+    padding: 3px;
+    width: 60px;
+}
+.yes-no #no{
+    margin: 15px;
+    margin-top: 40px;
+    padding: 3px;
+    width: 60px;
+}
+
