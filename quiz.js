@@ -26,10 +26,6 @@ function buttonClick(brojac) {
 
 
 function ui() {
-    // for (let i = 0; i < questions.length; i++) {
-    //     const element = array[i];
-        
-    // }
     console.log(questionText);
     questionText.textContent = questions[brojac].question
     answer1Label.textContent = questions[brojac].answers[0]
