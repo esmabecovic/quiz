@@ -12,7 +12,7 @@ let answer3Label = document.querySelector("#answer3Label")
 let answer4Label = document.querySelector("#answer4Label")
 let btn = document.querySelector('.btn')
 let modal = document.querySelector('.myModal')
-let x = document.querySelector('#yes')
+let yesBtn = document.querySelector('#yes')
 let noBtn = document.querySelector('#no')
 
 brojac = 0
@@ -24,8 +24,8 @@ function buttonClick() {
         brojac++
         console.log(brojac);  
     }
-}
-    x.onclick = () =>{
+},
+    yesBtn.onclick = () =>{
         allAnswers.forEach(el =>{
             // console.log(+el.id);
             if(el.checked){
