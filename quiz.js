@@ -10,13 +10,14 @@ let answer1Label = document.querySelector("#answer1Label")
 let answer2Label = document.querySelector("#answer2Label")
 let answer3Label = document.querySelector("#answer3Label")
 let answer4Label = document.querySelector("#answer4Label")
+let submitBtn = document.querySelector("#submitBtn")
 let btn = document.querySelector('.btn')
 let modal = document.querySelector('.myModal')
 let yesBtn = document.querySelector('#yes')
 let noBtn = document.querySelector('#no')
 
 brojac = 0
-modalBtn()
+
 function buttonClick() {
     allAnswers.forEach (el => {
       el.checked = false
@@ -54,7 +55,10 @@ function buttonClick() {
             }
         })
     }
-    )}    
+    )} 
+    noBtn.onclick = () => {
+        modal.style.display = 'none'
+    }   
 
 
     
@@ -70,10 +74,17 @@ function ui() {
     answer4Label.textContent = questions[brojac].answers[3]
     
 }
-
+function modalBtn() {
+    submitBtn.onclick = () => {
+           modal.style.display = 'flex'
+    }
+ 
+    
+}
 const shuffledQuestions = questions.sort((a, b) => 0.5 - Math.random());
 
 console.log(questions)
 console.log(shuffledQuestions);
 buttonClick()
 ui()
+modalBtn()
