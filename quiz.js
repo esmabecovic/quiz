@@ -73,6 +73,7 @@ function quizEnd() {
   answers.outerHTML = ''
   questionText.style.fontSize = '30px'
   questionText.textContent = `Your score is: ${highScoreNumber}`
+  questionText.style.color = 'white'
   btn.outerHTML = '';
   resetBtn.onclick = () => {
     location.reload()
