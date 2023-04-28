@@ -73,6 +73,12 @@ function ui() {
   answer2Label.textContent = questions[brojac].answers[1];
   answer3Label.textContent = questions[brojac].answers[2];
   answer4Label.textContent = questions[brojac].answers[3];
+
+  if (brojac === 4 || brojac === 9 || brojac === 14) {
+    questionText.style.color = "yellow";
+  } else {
+    questionText.style.color = "";
+  }
 }
 function modalBtn() {
   submitBtn.onclick = () => {
