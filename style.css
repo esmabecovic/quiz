@@ -54,7 +54,7 @@ label{
     width: 100%;
     color: white;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 20px;
 }
 #cardQuestion{
     padding: 20px;
@@ -178,6 +178,10 @@ label{
     font-weight: 600;
     transition: 0.5s;
 }
+input[type="radio"] {
+    width: 17px;
+    height: 17px;
+  }
 
   
 
