@@ -19,7 +19,6 @@ let realHighScore = document.querySelector("#realHighScore");
 
 let brojac = 0;
 let highScoreNumber = 0;
-let realHighScoreNumber = 0;
 resetBtnFunc();
 function buttonClick() {
   allAnswers.forEach(
@@ -32,8 +31,7 @@ function buttonClick() {
         if (el.checked) {
           if (+el.id === questions[brojac].correct_answer) {
             highScoreNumber++;
-            realHighScoreNumber = highScoreNumber;
-            highScore.textContent = `correct Answers: ${highScoreNumber}`;
+            highScore.textContent = `Correct answers: ${highScoreNumber}`;
             console.log("tacno");
             brojac++;
             console.log(brojac);
@@ -74,7 +72,7 @@ function quizEnd() {
   realHighScore.outerHTML = "";
   answers.outerHTML = ''
   questionText.style.fontSize = '30px'
-  questionText.textContent = `your score was: ${highScoreNumber}, your high score was: ${realHighScoreNumber}`
+  questionText.textContent = `Your score is: ${highScoreNumber}`
   btn.outerHTML = '';
   resetBtn.onclick = () => {
     location.reload()
@@ -91,7 +89,6 @@ function resetBtnFunc() {
     brojac = 0;
     console.log(brojac);
     ui();
-    realHighScore.textContent = `High Score: ${realHighScoreNumber}`;
     highScoreNumber = 0;
     highScore.textContent = "";
   };
