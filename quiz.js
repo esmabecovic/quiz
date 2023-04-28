@@ -13,27 +13,33 @@ let btn = document.querySelector(".btn");
 let modal = document.querySelector(".myModal");
 let yesBtn = document.querySelector("#yes");
 let noBtn = document.querySelector("#no");
-let resetBtn = document.querySelector("#resetBtn")
-let highScore = document.querySelector("#highScore")
+let resetBtn = document.querySelector("#resetBtn");
+let highScore = document.querySelector("#highScore");
+let realHighScore = document.querySelector("#realHighScore");
 
-brojac = 0;
-highScoreNumber = 0
+let brojac = 0;
+let highScoreNumber = 0;
+let realHighScoreNumber = 0;
+resetBtnFunc();
 function buttonClick() {
   allAnswers.forEach(
     (el) => {
       el.checked = false;
-      el.onclick = () => {
-        console.log(brojac);
-      };
+      el.onclick = () => {};
     },
     (yesBtn.onclick = () => {
       allAnswers.forEach((el) => {
         if (el.checked) {
           if (+el.id === questions[brojac].correct_answer) {
-            highScoreNumber++
-            highScore.textContent = `correct Answers: ${highScoreNumber}`
+            highScoreNumber++;
+            realHighScoreNumber = highScoreNumber;
+            highScore.textContent = `correct Answers: ${highScoreNumber}`;
             console.log("tacno");
             brojac++;
+            console.log(brojac);
+            if (brojac === 15) {
+              quizEnd();
+            }
             ui();
             modal.style.display = "none";
             allAnswers.forEach((el) => {
@@ -43,6 +49,9 @@ function buttonClick() {
             console.log("netacno");
             modal.style.display = "none";
             brojac++;
+            if (brojac === 15) {
+              quizEnd();
+            }
             ui();
             allAnswers.forEach((el) => {
               el.checked = false;
@@ -53,17 +62,43 @@ function buttonClick() {
     })
   );
 }
+function quizEnd() {
+  modal.style.display = "none";
+  cardQuestion.style.display = "flex";
+  cardQuestion.style.justifyContent = "center";
+  cardQuestion.style.alignItems = "center";
+  cardQuestion.style.color = "white";
+  cardQuestion.style.fontSize = "30px";
+  cardQuestion.style.textAlign = "center";
+  highScore.outerHTML = "";
+  realHighScore.outerHTML = "";
+  answers.outerHTML = ''
+  questionText.style.fontSize = '30px'
+  questionText.textContent = `your score was: ${highScoreNumber}, your high score was: ${realHighScoreNumber}`
+  btn.outerHTML = '';
+  resetBtn.onclick = () => {
+    location.reload()
+  }
+
+}
 noBtn.onclick = () => {
   modal.style.display = "none";
 };
 
 function resetBtnFunc() {
-    resetBtn.onclick = () => {
-        location.reload()
-    }
+  resetBtn.onclick = () => {
+    console.log(brojac);
+    brojac = 0;
+    console.log(brojac);
+    ui();
+    realHighScore.textContent = `High Score: ${realHighScoreNumber}`;
+    highScoreNumber = 0;
+    highScore.textContent = "";
+  };
 }
 
 function ui() {
+  console.log(brojac);
   console.log(questionText);
   questionText.textContent = questions[brojac].question;
   answer1Label.textContent = questions[brojac].answers[0];
@@ -76,13 +111,14 @@ function ui() {
   } else {
     questionText.style.color = "";
   }
+
 }
 function modalBtn() {
-    submitBtn.onclick = () => {
-      modal.style.display = "flex";
-      modal.backdrop = 'true'
-    }
-  }
+  submitBtn.onclick = () => {
+    modal.style.display = "flex";
+    modal.backdrop = "true";
+  };
+}
 const shuffledQuestions = questions.sort((a, b) => 0.5 - Math.random());
 
 console.log(questions);
@@ -90,4 +126,3 @@ console.log(shuffledQuestions);
 buttonClick();
 ui();
 modalBtn();
-resetBtnFunc()
