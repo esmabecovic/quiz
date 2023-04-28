@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;   
 }
 #main{
     width: 100%;
@@ -10,7 +12,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: lightblue;
+    background-color: #19365f;
 }
 
 #questionTextDiv{
@@ -31,6 +33,7 @@ label{
 }
 #answers ul{
     list-style-type: none;
+    margin-left: 40px;
 }
 
 #answers{
@@ -40,6 +43,9 @@ label{
     justify-content: space-around;
     height: 45%;
     width: 100%;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
 }
 #cardQuestion{
     padding: 20px;
@@ -48,8 +54,12 @@ label{
     align-items: baseline;
     width: 50%;
     height: 60vh;
-    background-color: white;
-    border-radius: 20px;
+    background-color: #4d77a1;
+    border-radius: 50px;
+    box-shadow: -8px 9px 11px -3px rgba(0,0,0,0.1);
+}
+#questionTextP{
+    color: white;
 }
 .btn{
     display: flex;
@@ -67,15 +77,35 @@ label{
     width: 80px;
     height: 4vh;
     border-radius: 10px;
+    font-weight: 500;
+    background-color: #bfd7ee;
+    color: rgb(71, 71, 71);
+    box-shadow: -7px 9px 11px -3px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+#resetBtn:hover{
+    background-color: #7C7C7C;
+    color: white;
+    transition: 0.5s;
 }
 #submitBtn{
     display: flex;
     margin-top: 20px;
     justify-content: center;
     align-items: center;
-    width: 80px;
+    width: 120px;
     height: 4vh;
     border-radius: 10px;
+    background-color: #19365f;
+    color: white;
+    font-weight: 550;
+    box-shadow: -7px 9px 11px -3px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+#submitBtn:hover{
+    background-color: #CBEF43;
+    color: rgb(47, 47, 47);
+    transition: 0.5s;
 }
 .myModal{
     display: none;
@@ -86,6 +116,7 @@ label{
     align-items: center;
     position: fixed;
     border-radius: 20px;
+    background-color: #CCFBFE; 
 }
 .modal-content{
     display: flex;
@@ -103,16 +134,40 @@ label{
     width: 100%;
     height: 4vh;
 }
+#confirmAns{
+    color: #202A25;
+    font-weight: 500;
+}
 .yes-no #yes{
     margin: 15px;
     margin-top: 40px;
     padding: 3px;
     width: 60px;
+    background-color: #19365f;
+    color: white;
+    border-radius: 15px;
+}
+.yes-no #yes:hover{
+    background-color: #CBEF43;
+    color: #202A25;
+    font-weight: 600;
+    transition: 0.5s;
 }
 .yes-no #no{
     margin: 15px;
     margin-top: 40px;
     padding: 3px;
     width: 60px;
+    background-color: #19365f;
+    color: white;
+    border-radius: 15px;
 }
+.yes-no #no:hover{
+    background-color: #CBEF43;
+    color: #202A25;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+  
 

@@ -27,28 +27,23 @@ function buttonClick() {
     },
     (yesBtn.onclick = () => {
       allAnswers.forEach((el) => {
-        // console.log(+el.id);
         if (el.checked) {
           if (+el.id === questions[brojac].correct_answer) {
             console.log("tacno");
             brojac++;
             ui();
             modal.style.display = "none";
-            // console.log(el.id);
-            // console.log(questions[i].correct_answer);
             allAnswers.forEach((el) => {
               el.checked = false;
             });
           } else {
             console.log("netacno");
             modal.style.display = "none";
-            // alert('Pokusajte ponovo!')
             brojac++;
             ui();
             allAnswers.forEach((el) => {
               el.checked = false;
             });
-            // return false
           }
         }
       });
@@ -63,7 +58,6 @@ function resetBtnFunc() {
     resetBtn.onclick = () => {
         location.reload()
     }
-    
 }
 
 function ui() {
@@ -75,16 +69,17 @@ function ui() {
   answer4Label.textContent = questions[brojac].answers[3];
 
   if (brojac === 4 || brojac === 9 || brojac === 14) {
-    questionText.style.color = "yellow";
+    questionText.style.color = "#CBEF43";
   } else {
     questionText.style.color = "";
   }
 }
 function modalBtn() {
-  submitBtn.onclick = () => {
-    modal.style.display = "flex";
-  };
-}
+    submitBtn.onclick = () => {
+      modal.style.display = "flex";
+      modal.backdrop = 'true'
+    }
+  }
 const shuffledQuestions = questions.sort((a, b) => 0.5 - Math.random());
 
 console.log(questions);
