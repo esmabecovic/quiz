@@ -14,9 +14,10 @@ let modal = document.querySelector(".myModal");
 let yesBtn = document.querySelector("#yes");
 let noBtn = document.querySelector("#no");
 let resetBtn = document.querySelector("#resetBtn")
+let highScore = document.querySelector("#highScore")
 
 brojac = 0;
-
+highScoreNumber = 0
 function buttonClick() {
   allAnswers.forEach(
     (el) => {
@@ -29,6 +30,8 @@ function buttonClick() {
       allAnswers.forEach((el) => {
         if (el.checked) {
           if (+el.id === questions[brojac].correct_answer) {
+            highScoreNumber++
+            highScore.textContent = `correct Answers: ${highScoreNumber}`
             console.log("tacno");
             brojac++;
             ui();
