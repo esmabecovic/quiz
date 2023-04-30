@@ -121,7 +121,6 @@ label{
     display: none;
     width: 30%;
     height: 20vh;
-    background-color: lightcoral;
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -181,7 +180,7 @@ label{
 input[type="radio"] {
     width: 17px;
     height: 17px;
-  }
+}
 
   
 

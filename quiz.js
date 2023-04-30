@@ -15,7 +15,9 @@ let yesBtn = document.querySelector("#yes");
 let noBtn = document.querySelector("#no");
 let resetBtn = document.querySelector("#resetBtn");
 let highScore = document.querySelector("#highScore");
-let realHighScore = document.querySelector("#realHighScore");
+let modalBackdrop = document.querySelector('.modal-backdrop');
+
+
 
 let brojac = 0;
 let highScoreNumber = 0;
@@ -114,7 +116,6 @@ function ui() {
 function modalBtn() {
   submitBtn.onclick = () => {
     modal.style.display = "flex";
-    modal.backdrop = "true";
   };
 }
 const shuffledQuestions = questions.sort((a, b) => 0.5 - Math.random());
