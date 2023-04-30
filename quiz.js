@@ -19,7 +19,7 @@ let realHighScore = document.querySelector("#realHighScore");
 let timer= document.querySelector(".timer");
 
 
-var vreme=30;
+var vreme=60;
 var intervalID=setInterval(odbrojavanje,1000)
 function odbrojavanje (){
   if(vreme>0){
@@ -28,7 +28,7 @@ function odbrojavanje (){
   }
   else{
         console.log("netacno");
-        vreme=30;
+        vreme=60;
         modal.style.display = "none";
         brojac++;
         if (brojac === 15) {
@@ -39,8 +39,6 @@ function odbrojavanje (){
           el.checked = false;
           
         });
-      
-    
   
     console.log(intervalID)
 
