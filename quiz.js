@@ -30,10 +30,8 @@ function odbrojavanje (){
         console.log("netacno");
         vreme=31;
         modal.style.display = "none";
-        brojac++;
-        if (brojac === 15) {
-          quizEnd();
-        }
+       brojac = 15
+        quizEnd()
         ui();
         allAnswers.forEach((el) => {
           el.checked = false;
