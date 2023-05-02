@@ -47,7 +47,7 @@ function odbrojavanje (){
 
 
 
-let brojac = 14;
+let brojac = 0;
 let highScoreNumber = 0;
 resetBtnFunc();
 function buttonClick() {
