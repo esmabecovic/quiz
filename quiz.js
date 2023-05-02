@@ -144,9 +144,20 @@ function ui() {
 }
 function modalBtn() {
   submitBtn.onclick = () => {
-    modal.style.display = "flex";
+        toggle()
   };
 }
+function toggle(){
+    if(getComputedStyle(modal).display === 'flex'){
+        modal.style.display = 'none'
+        document.body.style.overflow = 'initial'
+    }
+    else{
+        modal.style.display = 'flex'
+        document.body.style.overflow = 'hidden'
+    }
+}
+
 const shuffledQuestions = questions.sort((a, b) => 0.5 - Math.random());
 
 console.log(questions);
