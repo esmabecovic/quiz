@@ -16,6 +16,36 @@ let noBtn = document.querySelector("#no");
 let resetBtn = document.querySelector("#resetBtn");
 let highScore = document.querySelector("#highScore");
 let realHighScore = document.querySelector("#realHighScore");
+let timer= document.querySelector(".timer");
+
+
+var vreme=60;
+var intervalID=setInterval(odbrojavanje,1000)
+function odbrojavanje (){
+  if(vreme>0){
+    vreme-=1;
+    timer.innerHTML=vreme
+  }
+  else{
+        console.log("netacno");
+        vreme=60;
+        modal.style.display = "none";
+        brojac++;
+        if (brojac === 15) {
+          quizEnd();
+        }
+        ui();
+        allAnswers.forEach((el) => {
+          el.checked = false;
+          
+        });
+  
+    console.log(intervalID)
+
+  }
+}
+
+
 
 let brojac = 0;
 let highScoreNumber = 0;
@@ -33,6 +63,7 @@ function buttonClick() {
             highScoreNumber++;
             highScore.textContent = `Correct answers: ${highScoreNumber}`;
             console.log("tacno");
+            vreme=30;
             brojac++;
             console.log(brojac);
             if (brojac === 15) {
@@ -114,7 +145,6 @@ function ui() {
 function modalBtn() {
   submitBtn.onclick = () => {
     modal.style.display = "flex";
-    modal.backdrop = "true";
   };
 }
 const shuffledQuestions = questions.sort((a, b) => 0.5 - Math.random());
