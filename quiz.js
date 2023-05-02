@@ -19,7 +19,7 @@ let realHighScore = document.querySelector("#realHighScore");
 let timer= document.querySelector(".timer");
 
 
-var vreme=60;
+var vreme=31;
 var intervalID=setInterval(odbrojavanje,1000)
 function odbrojavanje (){
   if(vreme>0){
@@ -28,7 +28,7 @@ function odbrojavanje (){
   }
   else{
         console.log("netacno");
-        vreme=60;
+        vreme=31;
         modal.style.display = "none";
         brojac++;
         if (brojac === 15) {
@@ -47,7 +47,7 @@ function odbrojavanje (){
 
 
 
-let brojac = 0;
+let brojac = 14;
 let highScoreNumber = 0;
 resetBtnFunc();
 function buttonClick() {
@@ -57,13 +57,13 @@ function buttonClick() {
       el.onclick = () => {};
     },
     (yesBtn.onclick = () => {
+      vreme = 31
       allAnswers.forEach((el) => {
         if (el.checked) {
           if (+el.id === questions[brojac].correct_answer) {
             highScoreNumber++;
             highScore.textContent = `Correct answers: ${highScoreNumber}`;
             console.log("tacno");
-            vreme=30;
             brojac++;
             console.log(brojac);
             if (brojac === 15) {
@@ -106,6 +106,8 @@ function quizEnd() {
   questionText.textContent = `Your score is: ${highScoreNumber}`
   questionText.style.color = 'white'
   btn.outerHTML = '';
+  timer.innerHTML = ''
+  timer.outerHTML = ''
   resetBtn.onclick = () => {
     location.reload()
   }
