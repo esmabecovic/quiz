@@ -192,6 +192,21 @@ input[type="radio"] {
 .timer{
     color: #CBEF43;
 }
-
+@media(max-width: 900px){
+    #cardQuestion{
+        width: 70%;
+        height: 70vh;
+    }
+    #questionTextP{
+        font-size: 26px;
+        text-align: center;
+    }
+    .modal-content{
+        width: 60%;
+    }
+    #confirmAns{
+        text-align: center;
+    }
+}
   
 
